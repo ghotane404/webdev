@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MyFirstPage - About</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles.css">
+        <script type="module" src="script.js"></script>
+    </head>
+    
+    <body>
+        <header>Header
+            <img src="images/mainlogo.jpg" alt="pastry buns that are ready to eat">
+        </header>
+
+        <nav>
+            Nav 
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+            </ul>
+        </nav>
+
+
+        <section class="shop-here-section">
+            <h2>Why shop here…</h2>
+            <div class="flex-container">
+                <div class="perk">value / perk</div>
+                <div class="perk">value / perk</div>
+                <div class="perk">value / perk</div>
+            </div>
+        </section>
+
+        <br>
+
+
+        
+
+<nav>
+     <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>
+                 <div class="marker">You are currently on </div>
+                 <a href="about.html">About</a>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+     </ul>
+</nav>
+
+<select aria-label="Number of seats">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+</select>
+
+        <section>
+            Section
+            <main>
+                <h1>
+                    Learn a little about us!
+                </h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+                <h2>Contact Us</h2>
+
+
+                <form action="" method="post" id="contactusform">
+
+                    <fieldset>
+                        <legend>Personal Information:</legend>
+                        <label>First Name:
+                            <input type="text" name="fname">
+                        </label>
+                        <br>
+                        <label>Last Name:
+                            <input type="text" name="lname" required>
+                        </label>
+                        <br>
+                        <label>Phone:
+                            <input type="tel" name="phone">
+                        </label>
+                        <br>
+                        <label>Email:
+                            <input type="email" name="email">
+                        </label><br>
+                    </fieldset>
+
+                    <label>How many days per week do you visit the shop?
+                        <input type="number" min="0" max="7" required>
+                    </label><br>
+
+                    <label>Reason for communication:
+                        <select name="commenttype">
+                            <optgroup label="Feedback">
+                                <option value="comment">Comment</option>
+                                <option value="compliment">Compliment</option>
+                                <option value="complaint">Complaint</option>
+                            </optgroup>
+                            
+                            <optgroup label="Request">
+                                <option value="catering">Catering</option>
+                                <option value="suggestion">Suggestion</option>
+                            </optgroup>
+                        </select>
+                    </label><br>
+
+                    <label>Comments: <br>
+                        <textarea name="comment" rows="7" cols="30">
+
+                        </textarea>
+                    </label><br>
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear">
+
+
+                </form>
+            </main>
+
+            <video width="320" height="240">
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.webm" type="video/webm">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support video playback.
+            </video>
+
+
+            <aside>Aside</aside>
+
+        </section>
+
+        <footer>Footer</footer>
+                                                                                         
+    </body>
+</html>

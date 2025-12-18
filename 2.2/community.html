@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>MyFirstPage - Menu</title>
+        <title>MyFirstPage - About</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,56 @@
 
         <style>
             * {
-                box-sizing: border-box;
+            box-sizing: border-box;
             }
+
+            main, aside {
+            padding: 5px;
+            }
+
+            main{
+            background: #fdffc2;
+            }
+
+            aside {
+            background: #74776b;
+            }
+
         </style>
 
     </head>
-
+    
     <body>
+        <header>Header
+            <img src="images/mainlogo.jpg" alt="pastry buns that are ready to eat">
+            
+            <div id="header-upper">
+                <a href="index.html">
+                    <img src="WEBDEV336a_c.png" alt="Good Harvest Bakery Logo" id="logo">
+                </a>
+                <h1 id="client-name">Good<br>Harvest<br>Bakery</h1>
+            </div>
+
+            <nav>
+                <ul class="navbar-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+
+                <button class="navbar"><i class="fa-solid fa-bars"></i> 
+                    <ul class="navbar-list-mobile">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </button>
+            </nav>
+
+        </header>
+        
         <nav>
             Nav 
 
@@ -40,13 +83,8 @@
 
         </nav>
 
-        <section>
-            Section
-            <main>Main</main>
-            <aside>Aside</aside>
-        </section>
 
-        <footer>
+<footer>
     
             <div class="newsletter-section">
             <div class="left-half">
@@ -71,6 +109,3 @@
             <a href="community.html">Community</a>
             </div>
         </footer>
-                                                                                         
-    </body>
-</html>
