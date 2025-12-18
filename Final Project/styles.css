@@ -1,0 +1,88 @@
+html{
+    height: 100%;
+    width: 100%;
+    color: #131C26;
+}
+
+/* header{
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Georgia;
+    z-index: 5;
+    position: fixed;
+    text-align: center;
+    left: 15%;
+    top: 3.2%
+
+}
+
+img{
+    box-sizing: border-box;
+    position: absolute;
+    width: 100px;
+    left: 1%;
+    top: .1%;
+    z-index: 4;
+
+    border: 2px solid purple;
+} */
+
+#navigation{
+    width: 300px;
+    border: 10px solid red;
+    right: 30%;
+}
+
+#logo{
+    width: 300px;
+    border: 10px solid blueviolet;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+nav{
+    box-sizing: border-box;
+    position: relative;
+    text-align: right;
+
+    border: 2px solid magenta;
+    
+}
+
+ul {
+    margin: 0px;
+}
+
+nav ul{
+    list-style-type: none;
+    background-color: #3F5461;
+
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a{
+    display: inline-block;
+    padding: 35px;
+    text-decoration: none;
+    font-family: arial;
+    font-size: 25px;
+    font-weight: bold;
+    color: #C1CFD6;
+}
+
+nav ul li a:hover{
+    background-color: #353549;
+    color: white;
+}
+
+#hours{
+    width: 275px;
+    border: 1px solid black;
+}
+
+#hours th, #hours td{
+    border: 1px solid black;
+}
