@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Home</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="styles.css">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js"></script>
 
-    </head>
+</head>
 
-    <body>
-        <header>Gallery</header>
+<body>
+    <header>
+        <div id="header-upper">
+            <a href="index.html">
+                <img src="icon/Client3_LogoPalette2.png" alt="Book Haven Bookstore Logo" id="logo">
+            </a>
+            <h1 id="client-name">Book<br>Haven<br>Bookstore</h1>
+        </div>
+    </header>
 
-        <nav>
+    <nav>
+        <div class="fullmenu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="events.html">Events</a></li>
             </ul>
+        </div>
 
-        </nav>
+        <div id="bookmenu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            <ul id="bookmenulinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
 
@@ -30,5 +49,5 @@
 
 
 
-    </body>
+</body>
 </html>

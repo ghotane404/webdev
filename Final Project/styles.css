@@ -4,59 +4,13 @@ html{
     color: #131C26;
 }
 
-/* header{
-    font-weight: bold;
-    font-size: 30px;
-    font-family: Georgia;
-    z-index: 5;
-    position: fixed;
-    text-align: center;
-    left: 15%;
-    top: 3.2%
-
-}
-
-img{
-    box-sizing: border-box;
-    position: absolute;
-    width: 100px;
-    left: 1%;
-    top: .1%;
-    z-index: 4;
-
-    border: 2px solid purple;
-} */
-
-#navigation{
-    width: 300px;
-    border: 10px solid red;
-    right: 30%;
-}
-
-#logo{
-    width: 300px;
-    border: 10px solid blueviolet;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
-nav{
-    box-sizing: border-box;
-    position: relative;
-    text-align: right;
-
-    border: 2px solid magenta;
-    
-}
-
-ul {
-    margin: 0px;
+header img {
+    width: 200px;
 }
 
 nav ul{
     list-style-type: none;
     background-color: #3F5461;
-
 }
 
 nav ul li{
@@ -65,10 +19,9 @@ nav ul li{
 
 nav ul li a{
     display: inline-block;
-    padding: 35px;
+    padding: 10px;
     text-decoration: none;
     font-family: arial;
-    font-size: 25px;
     font-weight: bold;
     color: #C1CFD6;
 }
@@ -78,11 +31,47 @@ nav ul li a:hover{
     color: white;
 }
 
-#hours{
+#hours {
     width: 275px;
     border: 1px solid black;
 }
 
 #hours th, #hours td{
     border: 1px solid black;
+}
+
+#fullmenu {
+    display: none;
+}
+
+#bookmenu {
+    position: relative;
+    display: black;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+}
+
+#bookmenu #bookmenulinks {
+    visibility: hidden;
+    position: absolute;
+    list-style-type: none;
+    padding: 25px 10px;
+    text-align: center;
+    width: 150px;
+    color: #171717;
+    background: #9e9e9e;
+}
+
+#bookmenu:hover #bookmenulinks {
+    visibility: visible;
+    display: block;
+    margin: 0 auto;
+    left: -61px;
+}
+
+@media all and (min-width: 580px) {
+    #fullmenu {
+        display: block;
+    }
 }
