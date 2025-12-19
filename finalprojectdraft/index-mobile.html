@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>About Us</title>
+    <title>About Us - Mobile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-mobile.css">
     <script src="https://kit.fontawesome.com/89138ebf6b.js" crossorigin="anonymous"></script>
     <script type="module" src="script.js"></script>
 
@@ -13,24 +13,7 @@
             box-sizing: border-box;
         }
 
-        main, aside {
-            padding: 5px;
-        }
-
-        main {
-            background: #fdffc2;
-        }
-
-        aside {
-            background: #74776b;
-        }
-
-        section {
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media all and (min-width: 580px) {
+        @media all and (min-width: 800px) {
             section {
                 flex-direction: row;
             }
@@ -42,35 +25,33 @@
 <body>
     <header>
         <div id="header-upper">
-            <a href="index.html">
+            <a href="index-mobile.html">
                 <img src="icon/Client3_LogoPalette2.png" alt="Book Haven Bookstore Logo" id="logo">
             </a>
             <h1 id="client-name">Book<br>Haven<br>Bookstore</h1>
         </div>
+
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+
+            <button class="navbar"><i class="fa-solid fa-bars"></i> 
+                <ul class="navbar-list-mobile">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </button>
+
+
+        </nav>
     </header>
-
-    <nav>
-        <div class="fullmenu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="index-mobile.html">Test</a></li>
-            </ul>
-        </div>
-
-        <div id="bookmenu">
-            <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-            <ul id="bookmenulinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="index-mobile.html">Test</a></li>
-            </ul>
-        </div>
-    </nav>
+    
 
     <section><h1>About Us</h1>
 
