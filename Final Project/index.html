@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home</title>
+    <title>About Us - Mobile</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/89138ebf6b.js" crossorigin="anonymous"></script>
     <script type="module" src="script.js"></script>
@@ -13,24 +13,7 @@
             box-sizing: border-box;
         }
 
-        main, aside {
-            padding: 5px;
-        }
-
-        main {
-            background: #fdffc2;
-        }
-
-        aside {
-            background: #74776b;
-        }
-
-        seciton {
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media all and (min-width: 580px) {
+        @media all and (min-width: 800px) {
             section {
                 flex-direction: row;
             }
@@ -42,36 +25,109 @@
 <body>
     <header>
         <div id="header-upper">
-            <a href="index.html">
+            <a href="index-mobile.html">
                 <img src="icon/Client3_LogoPalette2.png" alt="Book Haven Bookstore Logo" id="logo">
             </a>
             <h1 id="client-name">Book<br>Haven<br>Bookstore</h1>
         </div>
+
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+
+            <button class="navbar"><i class="fa-solid fa-bars"></i> 
+                <ul class="navbar-list-mobile">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </button>
+
+
+        </nav>
     </header>
 
-    <nav>
-        <div class="fullmenu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
+
+    <div class="shop-here-section">
+
+        <h2>Why Shop Here?</h2>
+
+        <div class="perk-box"> 
+            <div class="perk">
+                <h3>Loyalty Rewards Programs</h3>
+                <p>After you've purchased twelve new books, we will calculate the average price and provide you with a credit to use on your next purchase.
+</p>
+            </div>
         </div>
 
-        <div id="bookmenu">
-            <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-            <ul id="bookmenulinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
+        <div class="perk-box"> 
+            <div class="perk">
+                <h3>Gift Certificates </h3>
+                <p>We have lovely gift certificates available all year 'round and in any denomination you choose. In-store, by phone</p>
+            </div>
         </div>
-    </nav>
+        
+        <div class="perk-box"> 
+            <div class="perk">
+                <h3>Author Meet & Greet Pass </h3>
+                <p>Attend exclusive author events and skip long lines with priority-access passes. Enjoy a smoother experience at signings, Q&A sessions, and special appearances. </p>
+            </div>
+        </div>
+
+        <div class="perk-box"> 
+            <div class="perk">
+                <h3>Used-Book Trade-In Credit</h3>
+                <p>After you've purchased twelve new books, we will calculate the average price and provide you with a credit to use on your next purchase. This is our way of thanking you, our loyal customers, for your business and your support of your local independent bookstore over the years.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="category-section">
+        <h2>Popular Book Category</h2>
+        <div class="categories">
+            <div>Fantasy</div>
+            <div>Fiction</div>
+            <div>Horror</div>
+            <div>Mystery</div>
+            <div>Sci-Fi</div>
+            <div>Romance</div>
+
+        </div>
+    </section>
 
 
+    <footer>
+        
+        <div class="newsletter-section">
+            <div class="left-half">
+                <h2>Signup for our Newsletter!</h2>
+                <input type="email" placeholder="Your Email" id="subscribe" required>
+                <button id="subscribe-button">Subscribe</button>
+            </div>
+        
 
+            <div class="right-half">
+                <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+                <a href="#"><i class="fa-brands fa-facebook"></i> </a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
+                <a href="#"><i class="fa-brands fa-youtube"></i> </a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+        </div>
+
+    </footer>
 
 </body>
 </html>
