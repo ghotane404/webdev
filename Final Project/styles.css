@@ -14,8 +14,8 @@ html {
 /* MOBILE END */
 
 header img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
@@ -40,7 +40,7 @@ header {
 }
 
 h1#client-name {
-  font-size: 3.6rem;
+  font-size: 2rem;
   color: #2E2E4E;
   text-align: left;
   flex: 1;
@@ -67,6 +67,7 @@ h1#client-name {
   display: inline-block;
   height: 50px;
   width: 50px;
+  padding: 0;
 }
 
 nav i {
@@ -164,7 +165,7 @@ section {
     font-size: 18px;
 }
 
-sectionsub {
+.sectionsub {
     display: flex;
     flex-direction: column;
     font-size: 18px;
@@ -177,28 +178,36 @@ sectionsub {
   text-align: center;
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
 }
 
 .shop-here-section h2 {
   font-size: 2.4rem;
 }
 
+.shop-here-section-container{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .perk {
   display: inline-block;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 10px;
   margin: 2px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 5px;
   text-align: center;
   vertical-align: top;
   width: 90%;
+  height: auto; 
 }
 
 .perk-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 20rem; 
 }
 
 .perk h3 {
@@ -211,8 +220,13 @@ sectionsub {
 
 .category-section {
   width: 100%;
-  text-align: left;
+  text-align: center;
   margin-bottom: 20px;
+  margin-top: 40px;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .category-section h2 {
@@ -220,26 +234,38 @@ sectionsub {
 }
 
 .categories {
-  /* width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center; */
-
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  width: 80%;
+  display: flex; 
+  flex-direction: row;
+  text-align: center;
+  margin-left: auto;
+  flex-wrap: wrap;
+  margin-right: auto;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
 }
 
-.categories div {
+.category-logo {
+  width: 100%;
+  margin-right: auto;
+}
+
+section img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.categories > div {
   /* width: calc(50% - 10px); */
-  margin: 5px auto;
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   text-align: center;
   font-size: 1.6rem;
-
-  width: 75%;
+  margin: 2px;
 }
 
 .newsletter-section {
