@@ -5,6 +5,8 @@
 
 html {
   font-size: 62.4%;
+  font-family: arial;
+
 }
 
 /* body {
@@ -174,15 +176,30 @@ section {
 
 .shop-here-section {
   background-color: #f7f7f7;
+  max-width: 1200px;
+  width: 85%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-}
 
+
+  /* border: 4px solid black; */
+  /* box-sizing: border-box; */
+  
+}
 .shop-here-section h2 {
   font-size: 2.4rem;
+  font-family: arial;
+
+}
+
+.shop-here-section h3 {
+  font-size: 1.8rem;
+  font-family: arial;
 }
 
 .shop-here-section-container{
@@ -190,20 +207,21 @@ section {
   flex-direction: row;
   align-items: start;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 10px;
 }
 
 .perk {
   display: inline-block;
-  /* background-color: #fff; */
   padding: 10px;
   margin: 2px;
-  /* border: 1px solid #ddd; */
   border-radius: 5px;
   text-align: center;
   vertical-align: top;
   width: 90%;
   height: auto; 
+  /* background-color: #fff; */
+  /* border: 1px solid #ddd; */
 }
 
 .perk-box {
@@ -219,14 +237,17 @@ section {
 }
 
 .category-section {
-  width: 100%;
+  width: 85%;
+  max-width: 1200px;
+
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
-
 }
 
 .category-section h2 {
@@ -239,9 +260,10 @@ section {
   flex-direction: row;
   text-align: center;
   margin-left: auto;
-  flex-wrap: wrap;
   margin-right: auto;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   align-items: center;
   padding: 2rem;
 }
@@ -249,19 +271,20 @@ section {
 .category-logo {
   width: 100%;
   margin-right: auto;
+  border: 3px solid #2E2E4E;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
 }
 
 section img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
 .categories > div {
-  /* width: calc(50% - 10px); */
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
+  padding: 10px;
   border-radius: 5px;
   text-align: center;
   font-size: 1.6rem;
@@ -295,12 +318,24 @@ section img {
 .right-half a {
   margin: 0 10px;
   text-decoration: none;
+  
 }
 
 
-.right-half img {
-  width: 30px;
+.right-half i {
+  font-size: 2.3rem;
+  
 }
+
+
+#subscribe {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+
+/* ----------------------------- About Page ------------------------------- */
 
 input[type="submit"], input[type="reset"], button {
   background-color: #eba27a;
@@ -311,7 +346,7 @@ input[type="submit"], input[type="reset"], button {
   border-radius: 5px;
   cursor: pointer;
   /* idk about this size */
-  width: 25%;
+  width: 10%;
 }
 
 input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
