@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>About Us - Mobile</title>
     <meta charset="UTF-8">
@@ -8,25 +9,13 @@
     <script src="https://kit.fontawesome.com/89138ebf6b.js" crossorigin="anonymous"></script>
     <script type="module" src="script.js"></script>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        @media all and (min-width: 800px) {
-            section {
-                flex-direction: row;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
     <header>
         <div id="header-upper">
             <a href="index.html">
-                <img src="icon/Client3_LogoPalette2.png" alt="Book Haven Bookstore Logo" id="logo">
+                <img src="icon/Client3_LogoPalette1-yellow.png" alt="Book Haven Bookstore Logo" id="logo">
             </a>
             <h1 id="client-name">Book<br>Haven<br>Bookstore</h1>
         </div>
@@ -39,7 +28,8 @@
                 <li><a href="events.html">Events</a></li>
             </ul>
 
-            <button class="navbar"><i class="fa-solid fa-bars"></i> 
+            <button class="navbar">
+                <i class="fa-solid fa-bars burger"></i>
                 <ul class="navbar-list-mobile">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -47,12 +37,140 @@
                     <li><a href="events.html">Events</a></li>
                 </ul>
             </button>
-
-
         </nav>
     </header>
 
+    <main>
 
+        <h1>December Events!</h1>
+        <section class="event-container">
+            <h2>COMMUNITY BOOK DONATION</h2>
+            <p>
+                Support local families by donating new or gently used children’s books. All collected books will be
+                distributed through the Lakeside Family Resource Program. Board books, early readers, and chapter books
+                are especially helpful.
+            </p>
+            <table class="event-dates">
+                <tr>
+                    <th>Date:</th>
+                    <td>Wed, 12/3/2025</td>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <td>9:00am – 10:00am</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>123 Primary Street</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="event-container">
+            <h2>WINTER BOOK CLUB MEETUP: "THE SILVER HARBOR STORIES"</h2>
+            <p>
+                Join readers from around the community to discuss the novel “The Silver Harbor Stories.” New
+                participants are welcome. Hot tea and light snacks will be available.
+            </p>
+
+            <table class="event-dates">
+                <tr>
+                    <th>Date:</th>
+                    <td>Sun, 12/14/2025</td>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <td>4:00pm – 5:00pm</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>456 Secondary Street</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="event-container">
+            <h2>TERTIARY COMMUNITY BOOK SWAP</h2>
+            <p>
+                Support local families by donating new or gently used children’s books. All collected books will be
+                distributed through the Lakeside Family Resource Program. Board books, early readers, and chapter books
+                are especially helpful.
+            </p>
+            <table class="event-dates">
+                <tr>
+                    <th>Date:</th>
+                    <td>Wed, 12/18/2025</td>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <td>9:00am – 10:00am</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>789 Tertiary Street</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="event-container">
+            <h2>WINTER STORYTIME AND BOOK GIVEAWAY</h2>
+            <p>
+                Families are welcome to join a seasonal storytime session featuring local volunteer readers. Each child
+                attending will receive one free book, courtesy of the Placeholder Community Foundation.
+            </p>
+            <table class="event-dates">
+                <tr>
+                    <th>Date:</th>
+                    <td>Mon, 12/22/2025</td>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <td>11:00am – 11:45am</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>1011 Quaternary Street</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+
+    <footer>
+
+        <div class="newsletter-section">
+            <div class="left-half">
+                <h3>Signup for our Newsletter!</h3>
+                <input type="email" placeholder="Your Email" id="subscribe-email" required>
+                <button id="subscribe-button">Subscribe</button>
+            </div>
+
+
+            <div class="social-media-links">
+                <h3>Connect With Us</h3>
+                    <div>
+                        <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i> </a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i> </a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+        </div>
+
+
+        <div class="copy-right-patent-or-something">
+            <p>&copy; 2025 BOOK HEAVEN BOOKSTORE. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
