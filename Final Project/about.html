@@ -40,111 +40,91 @@
         </nav>
     </header>
 
-    <main>
-        <h2>About Us</h2>
-        <section class="about-us-section">
-            <p>
-                Book Haven Bookstore is a local treasure for book enthusiasts, offering a diverse selection of
-                books,
-                magazines, journals, and office supplies. With a deep-rooted commitment to fostering literary
-                exploration
-                and a love for reading, it is embarking on the creation of an online presence that mirrors its
-                dedication to
-                the world of words. Serving a broad audience of book lovers and knowledge seekers, its central goal
-                is to
-                amplify its visibility, cultivate a vibrant literary community, and simplify the process of book
-                inquiries
-                and purchases. Its target audience comprises avid readers, students, and individuals in search of
-                high-quality reading materials and office essentials. Book Haven Bookstore’s website theme revolves
-                around
-                celebrating the written word, creating an inviting digital space that encourages literary discovery,
-                and
-                supporting intellectual growth.
+    <main class="about-us">
+        <section class="about-us-container">
+            <h1>About Us</h1>
+            <p>Here at Book Haven Bookstore, we care deeply about creating a place where readers feel supported and
+                inspired. As a locally owned bookstore, we are passionate about connecting you with books, magazines,
+                journals, and office supplies that truly fit your interests, goals, and everyday needs. Whether you are
+                searching for your next favorite read, preparing for school, or picking up supplies for work or creative
+                projects, we strive to make every visit personal, enjoyable, and meaningful.
             </p>
-        </section>
+            <p>Our mission is to encourage literary exploration and a love of reading within our community. From avid
+                readers and students to curious browsers and lifelong learners, Book Haven is dedicated to making books
+                accessible and rewarding for everyone. As we continue to grow our online presence, we remain committed
+                to supporting our community, expanding access to our collection, and celebrating the written word in all
+                its forms.</p>
 
-        <h2>Hours</h2>
-        <section class="hour-container">
+            <h2>Business Hours</h2>
             <table id="hours">
                 <tr>
-                    <th>Days</th>
-                    <th>Open</th>
-                    <th>Close</th>
+                    <th>Monday - Friday</th>
+                    <td>8 AM - 8 PM</td>
                 </tr>
                 <tr>
-                    <td>Monday - Friday</td>
-                    <td>8 AM</td>
-                    <td>8 PM </td>
+                    <th>Saturday</th>
+                    <td>8 AM - 2 PM</td>
                 </tr>
                 <tr>
-                    <td>Saturday</td>
-                    <td>8 AM</td>
-                    <td>2 PM</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                    <td colspan="2">Closed</td>
+                    <th>Sunday</th>
+                    <td>Closed</td>
                 </tr>
             </table>
         </section>
 
-        <h2>Contact Us</h2>
-        <section class="contact-us-container">
-            <form action="" method="post" id="contactusform">
-                <label> Contact Reason:
-                    <select name="commenttype">
-                        <optgroup label="Request">
-                            <option value="refund">Refund</option>
-                            <option value="stuff">Stuff</option>
-                        </optgroup>
+        <section class="contact-us-section">
+            <!-- <div class="contact-us-container"> -->
+            <h2>Contact Us</h2>
+            <p>Have any questions or cocnerns? Please don't hesitate to reach out to us! </p>
 
-                        <optgroup label="Feedback">
-                            <option value="question">Question</option>
-                            <option value="stuff">Stuff</option>
-                        </optgroup>
-                    </select>
-                </label>
-
-                <br>
-
+            <form action="" method="post" id="contact-us-form">
                 <label>Name:
                     <input type="text" name="name" required>
                 </label>
-                <br>
-                <label>Phone:
+                <br><br>
+                <label>Phone:<br>
                     <input type="tel" name="phone">
                 </label>
-                <br>
-                <label>Email:
+                <br><br>
+                <label>Email:<br>
                     <input type="email" name="email" required>
                 </label>
-                <br>
+                <br><br>
+                <label for="requestType" class="form-label">Type of Request</label>
+                <select class="form-select" id="requestType" required="" data-ddg-inputtype="unknown">
+                    <option value="">Select a request type...</option>
+                    <option value="feedback">General Feedback</option>
+                    <option value="custom-order">Book Order</option>
+                    <option value="question">Question</option>
+                    <option value="other">Other</option>
+                </select>
+                <br><br>
                 <label>Message: <br>
-                    <textarea type="comment" rows="7" cols="30" required>
+                    <textarea type="comment" rows="5" required>
                     </textarea>
                 </label>
                 <br>
-
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="message-submit-button">
             </form>
+            <!-- </div> -->
         </section>
     </main>
 
-
-
     <footer>
 
-        <div class="newsletter-section">
-            <div class="left-half">
+        <div class="footer-container">
+
+            <div class="newsletter-section">
                 <h3>Signup for our Newsletter!</h3>
-                <input type="email" placeholder="Your Email" id="subscribe-email" required>
-                <button id="subscribe-button">Subscribe</button>
+                <div class="newsletter-container">
+                    <input type="email" placeholder="Your Email" id="subscribe-email" required>
+                    <button id="subscribe-button">Subscribe</button>
+                </div>
             </div>
 
-
-            <div class="social-media-links">
+            <div class="social-media-section">
                 <h3>Connect With Us</h3>
-                <div>
+                <div class="social-media-container">
                     <a href="#"><i class="fa-brands fa-instagram"></i> </a>
                     <a href="#"><i class="fa-brands fa-facebook"></i> </a>
                     <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
