@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/89138ebf6b.js" crossorigin="anonymous"></script>
-    <script type="module" src="script.js"></script>
 
 </head>
 
@@ -42,6 +41,12 @@
 
     <main>
         <section class="gallery-container">
+            
+            <div class="view-cart-header" id="view_cart_header">
+                <h2>Book Selection</h2>
+                    <button type="button" class="view-cart-button" id="click_viewCart">View Cart</button>
+            </div>
+
             <section class="gallery-book-grid">
                 <div class="gallery-book-box">
                     <div class="gallery-icon">
@@ -51,8 +56,7 @@
                     <h3>Brie Mine 4Ever</h3>
                     <p>$14.99</p>
 
-                    <button class="add-to-cart-button" data-product="book1"
-                        data-price="14.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="book1" data-price="14.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -61,8 +65,7 @@
                     </div>
                     <h3>Glory Riders</h3>
                     <p>$6.99</p>
-                    <button class="add-to-cart-button" data-product="book2"
-                        data-price="6.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="book2" data-price="6.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -71,8 +74,7 @@
                     </div>
                     <h3>Sorcerer’s Shadowed Chronicles</h3>
                     <p>$15.99</p>
-                    <button class="add-to-cart-button" data-product="book3"
-                        data-price="15.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="book3" data-price="15.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -81,8 +83,7 @@
                     </div>
                     <h3>Ball</h3>
                     <p>$19.99</p>
-                    <button class="add-to-cart-button" data-product="magazine1"
-                        data-price="19.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="magazine1" data-price="19.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -91,8 +92,7 @@
                     </div>
                     <h3>Travel</h3>
                     <p>$15.99</p>
-                    <button class="add-to-cart-button" data-product="magazine2"
-                        data-price="15.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="magazine2" data-price="15.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -101,8 +101,7 @@
                     </div>
                     <h3>Eat.</h3>
                     <p>$14.99</p>
-                    <button class="add-to-cart-button" data-product="magazine3"
-                        data-price="14.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="magazine3" data-price="14.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -112,9 +111,7 @@
                     </div>
                     <h3>Tote Bag</h3>
                     <p>$24.99</p>
-                    <button class="add-to-cart-button"
-                        data-product="totebag"
-                        data-price="24.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="totebag" data-price="24.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -124,9 +121,7 @@
                     </div>
                     <h3>Notebook</h3>
                     <p>$9.99</p>
-                    <button class="add-to-cart-button"
-                        data-product="notebook"
-                        data-price="9.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="notebook" data-price="9.99">Add to Cart</button>
                 </div>
 
                 <div class="gallery-book-box">
@@ -136,9 +131,7 @@
                     </div>
                     <h3>Stickers</h3>
                     <p>$4.99</p>
-                    <button class="add-to-cart-button"
-                        data-product="stickers"
-                        data-price="4.99">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product="stickers" data-price="4.99">Add to Cart</button>
                 </div>
 
             </section>
@@ -146,6 +139,38 @@
 
     </main>
 
+    <div class="modal">
+        <div class="viewCart-modal-section">
+            <div class="viewCart-modal-container bg-box">
+                <!-- view cart button to view the splash page  -->
+                <div class="viewCart-modal-header">
+                    <h3 class="modal-title" id="viewCart_items">Shopping Cart</h3>
+                    <button type="button" class="exit-viewCart" id="exit_viewCart"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <div class="divider"></div>
+                
+                <!-- view page where added items are listed -->
+                <div class="viewCart-modal-body" id="cart_items">
+                    <p>CART ITEM</p>
+                </div>
+                
+                <div class="divider"></div>
+
+                <!-- view cart splash page showing pricing calc -->
+                <div class="viewCart-modal-footer">
+                    <div class="viewCart-cart-total">Total: $<span id="cart-total">0.00</span></div>
+                    <div>
+                        <button type="button" class="clear-cartItems" id="clear_cartItems">Clear Cart</button>
+                        <button type="button" class="checkout-cartItems" id="checkout_cartItems">Checkout</button>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
     <footer>
         <div class="footer-container">
@@ -182,6 +207,8 @@
         </div>
     </footer>
 
+
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
