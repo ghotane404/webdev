@@ -65,7 +65,8 @@ h3 {
 /* ------------------------------------------------------------------------ */
 /* ------------------------------- HEADER --------------------------------- */
 /* ------------------------------------------------------------------------ */
-header img {
+
+.header-logo {
   width: 100px;
   height: 100px;
   object-fit: contain;
@@ -73,8 +74,11 @@ header img {
 
 header {
   background-color: var(--blue);
+  box-shadow: 0 4px 4px rgba(46, 64, 87, 0.2);
   display: flex;
   justify-content: space-between;
+  border-bottom-left-radius:  5px;
+  border-bottom-right-radius: 5px;
   align-items: center;
   padding: 0px 20px;
 }
@@ -84,7 +88,7 @@ header {
   align-items: center;
 }
 
-#logo {
+#header-logo {
   width: 100%;
   margin-right: auto;
 }
@@ -202,6 +206,7 @@ nav ul li a:hover {
 
 footer {
   background-color: var(--blue);
+  margin-top: 3rem;
 }
 
 .footer-container {
@@ -239,7 +244,6 @@ footer {
   background-color: var(--yellow);
   border-radius: 5px;
   font-weight: bold;
-  /* padding: 10px; */
   width: 100%;
   max-width: 100px;
 }
@@ -283,19 +287,81 @@ footer {
 /* ------------------------------ INDEX/HOME PAGE -------------------------------- */
 /* ------------------------------------------------------------------------------- */
 
-.promo-container {
+
+.promo-section {
   display: flex;
-  flex-direction: row;
-  align-items: start;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-flow: row;
+  align-self: center;
+  padding: 2rem
 }
 
-.promo-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.promo-pic-container1,
+.promo-pic-container2,
+.promo-pic-container3 {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
+
+.promo-pic-container1 a,
+.promo-pic-container2 a,
+.promo-pic-container3 a {
+  max-width: 100%;
+  flex: 0 1 500px;
+}
+
+
+.promo-text1, 
+.promo-text2,
+.promo-text3{
+  text-align: center;
+  flex: 1 1 300px;
+}
+
+
+.promo-pics1,
+.promo-pics2,
+.promo-pics3 {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background:rgba(46, 64, 87, 0.4);
+  cursor: pointer;
+}
+
+.carousel-indicators button.active {
+  background: var(--blue);
+}
+
+
+/* -------------- WHYYYYYYYYY SHOP HERE ---------------- */
 
 .shop-here-section-container {
   display: flex;
@@ -306,7 +372,6 @@ footer {
 }
 
 .perk {
-  /* border: 1px solid #2E2E4E; */
   display: inline-block;
   margin: 10px;
   text-align: center;
@@ -365,7 +430,6 @@ section img {
 }
 
 .customer-review-container {
-  /* border: 1px solid #2E2E4E; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -400,7 +464,6 @@ section img {
 }
 
 .about-us-container {
-  /* border: 1px solid yellow; */
   margin: 20px;
   margin-bottom: 2rem;
   margin-left: auto;
@@ -431,7 +494,6 @@ section img {
 }
 
 .contact-us-section {
-  /* border: 1px solid green; */
   background-color: rgba(247, 179, 204, 0.2);
   border-radius: 8px;
   margin-left: auto;
@@ -463,7 +525,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   padding: 10px;
-  text-align: left;
+  text-align: center;
   width: 5rem;
 }
 
@@ -531,9 +593,9 @@ button:hover,
   display: flex;
   gap: 1rem;
   justify-content: space-between; 
-  max-width: 1000px;             /* match your grid width */
-  margin: 0 auto;                /* center the whole header block */
-  padding: 0 7%;                 /* match your grid horizontal padding */
+  max-width: 1000px;            
+  margin: 0 auto;               
+  padding: 0 7%;                
   padding-top: 1.5rem;
 }
 
@@ -652,7 +714,6 @@ button:hover,
 }
 
 #exit_viewCart{
-  /* border: 1px solid blue; */
   height: 50%;
   background-color: none;
 }

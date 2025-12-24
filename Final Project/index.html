@@ -2,20 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>About Us - Mobile</title>
+    <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/89138ebf6b.js" crossorigin="anonymous"></script>
-    <script type="module" src="script.js"></script>
-
 </head>
 
 <body>
     <header>
         <div id="header-upper">
             <a href="index.html">
-                <img src="icon/Client3_LogoPalette1-yellow.png" alt="Book Haven Bookstore Logo" id="logo">
+                <img class="header-logo" id="header-logo" src="icon/Client3_LogoPalette1-yellow.png"
+                    alt="Book Haven Bookstore Logo">
             </a>
             <h1 id="client-name">Book<br>Haven<br>Bookstore</h1>
         </div>
@@ -41,22 +40,57 @@
     </header>
 
     <main>
-        <h2>Promo</h2>
+        <h2>Weekly Promotions!</h2>
         <section class="promo-section bg-box">
-            <div class="promo-container">
-                <div class="promo-pic">
+
+            <div class="promo-container carousel">
+
+                <div class="promo-pic-container1 slide active">
                     <a href="index.html">
-                        <img src="icon/homepage.jpg" alt="Fantasy Logo" >
+                        <img class="promo-pics1" src="icon/homepage.jpg" alt="">
                     </a>
+                    <div class="promo-text1">
+                        <h3>20% Off New Releases!</h3>
+                        <p>
+                            Discover the latest arrivals at a reduced price. Enjoy 20 percent
+                            off select new release titles for a limited time.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="promo-pic">
+                <div class="promo-pic-container2 slide">
                     <a href="index.html">
-                        <img src="icon/homepage2.jpg" alt="Fiction Logo" >
+                        <img class="promo-pics2" src="icon/homepage2.jpg" alt="">
                     </a>
+                    <div class="promo-text2">
+                        <h3>Buy 2, Get 1 Free</h3>
+                        <p>
+                            Expand your library for less. Purchase any two eligible titles and receive a third book at
+                            no additional cost.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="promo-pic-container3 slide">
+                    <a href="index.html">
+                        <img class="promo-pics3" src="icon/homepage.jpg" alt="">
+                    </a>
+                    <div class="promo-text3">
+                        <h3>Free Shipping This Week</h3>
+                        <p>
+                            Enjoy free shipping on all orders over $25.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="carousel-indicators">
+                    <button class="active" data-slide="0"></button>
+                    <button data-slide="1"></button>
+                    <button data-slide="2"></button>
                 </div>
 
             </div>
+
         </section>
 
         <h2>Why Shop Here?</h2>
@@ -162,11 +196,11 @@
                             hesitation.”</p>
                         <link rel="stylesheet"
                             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
                         <h4>- Adult </h4>
                     </div>
                 </div>
@@ -181,11 +215,11 @@
                             who choose to shop locally.” </p>
                         <link rel="stylesheet"
                             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>    
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
                         <h4>- 1800s Person</h4>
                     </div>
                 </div>
@@ -198,11 +232,11 @@
                         </p>
                         <link rel="stylesheet"
                             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
                         <h4>- Local Teen</h4>
                     </div>
                 </div>
@@ -262,6 +296,7 @@
         </div>
     </footer>
 
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
