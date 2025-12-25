@@ -1,0 +1,65 @@
+export const products = [
+    {
+        id: 0,
+        name: "Brie Mine 4Ever",
+        price: 14.99,
+        desc: "Brie Mine 4Ever, a book for cheese lovers",
+        imgSrc: "icon/Client3_Book1.png",
+    },
+    {
+        id: 1,
+        name: "Glory Riders",
+        price: 6.99,
+        desc: "Glory Riders, a book about bikers",
+        imgSrc: "icon/Client3_Book2.png",
+    },
+    {
+        id: 2,
+        name: "Sorcerer's Shadowed Chronicles",
+        price: 15.99,
+        desc: "Sorcerer's Shadowed Chronicles, a fantasy book",
+        imgSrc: "icon/Client3_Book3.png",
+    },
+    {
+        id: 3,
+        name: "Ball",
+        price: 19.99,
+        desc: "Ball, a magazine about pickleball",
+        imgSrc: "icon/Client3_Magazine1.png",
+    },
+    {
+        id: 4,
+        name: "Travel",
+        price: 15.99,
+        desc: "Travel, a magazine for travelers",
+        imgSrc: "icon/Client3_Magazine2.png",
+    },
+    {
+        id: 5,
+        name: "Eat.",
+        price: 14.99,
+        desc: "Eat., a magazine for foodies",
+        imgSrc: "icon/Client3_Magazine3.png",
+    },
+    {
+        id: 6,
+        name: "Tote Bag",
+        price: 24.99,
+        desc: "A canvas tote bag with black lettering that says ALL I DO IS READ READ READ",
+        imgSrc: "icon/Client3_ToteBag.png",
+    },
+    {
+        id: 7,
+        name: "Notebook",
+        price: 9.99,
+        desc: "A notebook with text on the cover that says Book Haven Bookstore",
+        imgSrc: "icon/Client3_Notebook.png",
+    },
+    {
+        id: 8,
+        name: "Stickers",
+        price: 4.99,
+        desc: "A set of four Book Haven Bookstore stickers that promote reading",
+        imgSrc: "icon/Client3_Stickers.png",
+    }
+]
