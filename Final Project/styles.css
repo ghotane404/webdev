@@ -592,13 +592,12 @@ button:hover,
   align-items: center;
   display: flex;
   gap: 1rem;
-  justify-content: space-between; 
-  max-width: 1000px;            
-  margin: 0 auto;               
-  padding: 0 7%;                
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
   padding-top: 1.5rem;
 }
-
 
 .gallery-book-grid {
   display: grid;
@@ -607,7 +606,7 @@ button:hover,
   padding-bottom: 2rem;
   padding-left: 5%;
   padding-right: 5%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -668,7 +667,6 @@ button:hover,
     grid-template-columns: 1fr;
   }
 }
-
 
 /* -------------------------------------------------------------------------- */
 /* ----------------------------- MODAL PAGE ------------------------------- */
