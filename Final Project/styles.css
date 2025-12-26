@@ -57,6 +57,7 @@ h3 {
 
  .divider {
  border:none;
+ box-shadow: 0 1px 3px rgba(46, 64, 87, 0.2);
  height: 1px;
  background-color: lightgray;
  margin: 1rem;
@@ -649,7 +650,6 @@ button:hover,
 }
 
 /* make smaller */
-
 .gallery-book-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -710,8 +710,7 @@ button:hover,
   align-content: center;
   align-items: center;
   font-size: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto; 
   width: 95%;
   height: 95%;
 }
@@ -724,14 +723,20 @@ button:hover,
 .viewCart-modal-footer {
   display: flex;
   justify-content: space-between;
-  align-content: center;
   align-items: center;
   font-size: 1.1rem;
   font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
   width: 95%;
-  height: 95%;
+  margin: 0 auto; 
+}
+
+.viewCart-cart-right {
+  display: flex;
+  gap: .7rem; 
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* -------------------------------------------------------------------------------------- */
@@ -758,16 +763,12 @@ body.modal-open {
   max-height: 60vh;   
 }
 
-
-
 .modal-viewCart-modal-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   max-width: 700px;
-  /* margin: 0 auto; */
   margin-left: auto;
   margin-right: auto;
-  /* border: 1px solid red */
 }
 
 
@@ -779,19 +780,9 @@ body.modal-open {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  /* margin: 0 auto; */
-  /* width: min(600px, 100%); */
 }
 
-/* .modal-gallery-icon > img {
-  border-radius: 10px;
-  width: 100%;
-  height: 100%; 
- 
-} */
-
 .modal-gallery-icon {
-  /* width: 400px; */
   height: auto;
   object-fit: contain;
   display: block;
@@ -812,7 +803,7 @@ body.modal-open {
 }
 
 .item-name > h3 {
-  line-height: 0;
+  line-height: 1.2;
 }
 
 .cart-pic {
@@ -842,19 +833,6 @@ body.modal-open {
 
 .quantity-row {
   display: block;
+  gap: 100px;
 }
-
-/* .modal-item-desc .quantity-row {
-
-display: block;
-} */
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem; */
-
-/* .modal-item-desc h3 {
-  word-wrap: break-word;
-} */
 

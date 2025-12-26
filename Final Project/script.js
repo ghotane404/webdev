@@ -16,9 +16,12 @@ const contact_us_messageBtn = document.getElementById('contact_us_message');
 if (contact_us_messageBtn) {
     contact_us_messageBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        //save cart to local storage
+        // localStorage.setItem("CART", JSON.stringify(contact_us_messageBtn))
         alert('Thank you for your message.');
     });
 }
+
 
 // ----------------------------------------------------------------------------------------
 // -------------------------- CHANGING THE HOMEPAGE PROMO BANNER --------------------------
@@ -71,19 +74,13 @@ checkout_cartItemsBtn.addEventListener('click', () => {
     alert('Thank you for your order.');
 });
 
-
-
 // --------------------------------------------------
 // -------------- CALCULATION FOR CART --------------
 // --------------------------------------------------
-
-
-
 // alert("Item added to the cart.")
 const productsEl = document.getElementById("productsGrid");
 const cartItemsEl = document.getElementById("productsModal");
 const subtotalEl = document.querySelector(".viewCart-cart-total");
-
 
 function renderProducts() {
     productsEl.innerHTML = products
@@ -109,9 +106,16 @@ function renderProducts() {
 renderProducts();
 
 // //Cart Array
-let cart = [];
-window.addToCart = addToCart;
+// let cart = [];
 
+let cart = JSON.parse(sessionStorage.getItem("CART")) || [];
+updateCart();
+
+// let cart = JSON.parse(localStorage.getItem("CART")) || [];
+// updateCart();
+
+// ADD TO CART FUNCTION
+window.addToCart = addToCart;
 function addToCart(id) {
     if (cart.some((item) => item.id === id)) {
         alert("Added to Cart.")
@@ -132,6 +136,9 @@ function addToCart(id) {
 function updateCart() {
     renderCartItems();
     renderSubtotal();
+    
+    sessionStorage.setItem("CART", JSON.stringify(cart))
+    // localStorage.setItem("CART", JSON.stringify(cart))
 }
 
 // calculate and render subtotal
@@ -151,7 +158,6 @@ function renderSubtotal(){
     
 
 window.changeQuantity = changeQuantity;
-
 function renderCartItems() {
     cartItemsEl.innerHTML = ""; //clear cart element
     cartItemsEl.innerHTML = cart
@@ -175,6 +181,8 @@ function renderCartItems() {
                         </div>
                     </div>
                 </div>
+
+                 <div class="divider"></div>
             `
         )
     .join("");
@@ -184,7 +192,7 @@ function renderCartItems() {
 const clear_cartItemsBtn = document.getElementById('clear_cartItems');
 clear_cartItemsBtn.addEventListener('click', () => {
   cart = []; // Clear the cart array
-  updateCart(); // Re-render everything
+  updateCart();  
     alert('Cart cleared');
 });
 
