@@ -9,18 +9,26 @@ if (newsletterBtn) {
   newsletterBtn.addEventListener('click', (e) => {
     e.preventDefault(); 
 
+    const email = document.getElementById('subscribe-email');
+
+    if (!email) {
+        alert('Please enter an email address.');
+        return;
+    }
+
     let newsletter = JSON.parse(localStorage.getItem('newsletter')) || []; // Key name for table 
 
     const newNewsletter = {
-      email: document.getElementById('subscribe-email').value, // Get the input value by ID
+      email: email// Get the input value by ID
     };
 
     newsletter.push(newNewsletter);
     localStorage.setItem('newsletter', JSON.stringify(newsletter));
 
     alert('Thank you for subscribing.');
+    location.reload();
   });
-}
+} 
 
 // -------------------------------------------------
 // ---------------- CONTACT US PAGE ----------------
