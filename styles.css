@@ -333,22 +333,22 @@ footer {
 }
 
 
-.slide {
+.banner {
   display: none;
 }
 
-.slide.active {
+.banner.active {
   display: flex;
 }
 
-.carousel-indicators {
+.carousel {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.carousel-indicators button {
+.carousel button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -357,7 +357,7 @@ footer {
   cursor: pointer;
 }
 
-.carousel-indicators button.active {
+.carousel button.active {
   background: var(--blue);
 }
 

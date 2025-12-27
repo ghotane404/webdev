@@ -62,8 +62,8 @@ if (contactUsMessageBtn) {
 // ----------------------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.carousel-indicators button');
+    const slides = document.querySelectorAll('.banner');
+    const dots = document.querySelectorAll('.carousel button');
     //   console.log(dots);
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
