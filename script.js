@@ -104,12 +104,6 @@ if (click_viewCartBtn && exit_viewCartBtn && viewCart_modalContainer) {
         }
     });
 }
-// alert("Thank you for your order.")
-if (checkout_cartItemsBtn) {
-    checkout_cartItemsBtn.addEventListener('click', () => {
-        alert('Thank you for your order.');
-    });
-}
 
 // --------------------------------------------------
 // -------------- CALCULATION FOR CART --------------
@@ -122,9 +116,11 @@ const subtotalEl = document.querySelector(".viewCart-cart-total");
 //preventing the cart calculation from appearing in other pages
 if (productsEl && cartItemsEl && subtotalEl) {
     function renderProducts() {
-        productsEl.innerHTML = products
-            .map(
-                (product) => `
+        let html = "";
+
+        // Loop through each product and create HTML
+        for (let product of products) {
+            html += `
                 <div class="gallery-book-box">
                     <div class="gallery-icon">
                         <img src="${product.imgSrc}" alt="${product.desc}">
@@ -133,24 +129,32 @@ if (productsEl && cartItemsEl && subtotalEl) {
                     <h3>${product.name}</h3>
                     <p><span>$</span>${product.price}</p>
 
-                    <button class="add-to-cart-button" onclick="addToCart(${product.id}) "data-price="${product.price}">
+                    <button class="add-to-cart-button" data-product-id="${product.id}">
                         Add to Cart
                     </button>
                 </div>
-            `
-            )
-            .join("");
+            `;
+        }
+        productsEl.innerHTML = html;
+
+        productsEl.addEventListener('click', (e) => {
+            if (e.target.classList.contains('add-to-cart-button')) {
+                const productId = parseInt(e.target.getAttribute('data-product-id'));
+                addToCart(productId);
+            }
+        });
     }
 
-    renderProducts();
 
-    // //Cart Array
-    // let cart = [];
-    let cart = JSON.parse(sessionStorage.getItem("CART")) || [];
-    updateCart();
+    // Get cart from sessionStorage, or start with empty array
+    let cart = [];
+    const savedCart = sessionStorage.getItem("CART");
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+    }
 
     // ADD TO CART FUNCTION
-    window.addToCart = addToCart;
+    // window.addToCart = addToCart;
     function addToCart(id) {
         if (cart.some((item) => item.id === id)) {
             alert("Added to Cart.")
@@ -168,8 +172,8 @@ if (productsEl && cartItemsEl && subtotalEl) {
 
     // update Cart
     function updateCart() {
-        renderCartItems();
-        renderSubtotal();
+        renderCartItems();              // Show items in modal
+        renderSubtotal();               // Update total price
 
         sessionStorage.setItem("CART", JSON.stringify(cart))
     }
@@ -184,62 +188,70 @@ if (productsEl && cartItemsEl && subtotalEl) {
             totalItem += item.quantity;
         });
         subtotalEl.innerHTML = `Total (${totalItem} items) : $${totalPrice.toFixed(2)}`;
-        console.log(subtotalEl);
-        console.log(totalItem);
-        console.log(totalPrice);
     }
 
-
-    window.changeQuantity = changeQuantity;
+    // window.changeQuantity = changeQuantity;
     function renderCartItems() {
-        cartItemsEl.innerHTML = ""; //clear cart element
-        cartItemsEl.innerHTML = cart
-            .map(
-                (item) => `
+        let html = "";
+
+        // Loop through cart and create HTML for each item
+        for (let item of cart) {
+            const itemTotal = (item.price * item.quantity).toFixed(2);
+
+            html += `
                 <div class="modal-gallery-book-box">
                     <div class="modal-gallery-icon" id="item1">
-                        <img src="${item.imgSrc}" class="cart-pic" id="cart-pic" onclick="removeItemFromCart(${item.id})" alt="${item.desc}">
+                        <img src="${item.imgSrc}" class="cart-pic" id="cart-pic" 
+                        alt="${item.desc}">
                     </div>
 
                     <div class="modal-item-desc">
                         <div class="item-name">
                             <h3>${item.name}</h3>
-                            <div class="item-price"><span>$</span>${(item.price * item.quantity).toFixed(2)}</div>
+                            <div class="item-price">
+                                <span>$</span>${(item.price * item.quantity).toFixed(2)}
+                            </div>
                         </div>
 
                         <div class="quantity-row">
-                            <button class="quantity-decrease" onclick="changeQuantity('minus', ${item.id})"><i class="fa-solid fa-minus"></i></button>
+                            <button class="quantity-decrease" data-product-id="${item.id}">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
                             <span class="quantity">${item.quantity}</span>
-                            <button class="quantity-increase" onclick="changeQuantity('plus', ${item.id})"> <i class="fa-solid fa-plus"></i></button>
+                            <button class="quantity-increase" data-product-id="${item.id}">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                  <div class="divider"></div>
-            `
-            )
-            .join("");
+            `;
+        }
+        cartItemsEl.innerHTML = html;
     }
 
-    // alert("Cart cleared") REMOVES ALLLL
-    const clear_cartItemsBtn = document.getElementById('clear_cartItems');
-    clear_cartItemsBtn.addEventListener('click', () => {
-        cart = []; // Clear the cart array
-        updateCart();
-        alert('Cart cleared');
+    cartItemsEl.addEventListener('click', function (e) {
+        // Check if minus button was clicked
+        if (e.target.closest('.quantity-decrease')) {
+            const button = e.target.closest('.quantity-decrease');
+            const id = parseInt(button.getAttribute('data-product-id'));
+            changeQuantity('minus', id);
+        }
+
+        // Check if plus button was clicked
+        if (e.target.closest('.quantity-increase')) {
+            const button = e.target.closest('.quantity-increase');
+            const id = parseInt(button.getAttribute('data-product-id'));
+            changeQuantity('plus', id);
+        }
     });
-
-
-    //remove one item from cart
-    window.removeItemFromCart = removeItemFromCart;
-    function removeItemFromCart(id) {
-        cart = cart.filter((item) => item.id !== id)
-        updateCart();
-    }
-
 
     // update quantity in Cart 
     function changeQuantity(action, id) {
+        console.log('Looking for item with id:', id);
+        console.log('Current cart:', cart);
+
         const item = cart.find((e) => e.id == id);
         let quantity = item.quantity;
 
@@ -249,7 +261,29 @@ if (productsEl && cartItemsEl && subtotalEl) {
         else if (action === "plus" && quantity < 99) {
             item.quantity++;
         }
-        // renderCartItems();
         updateCart();
     }
+
+    // alert("Cart cleared")
+    const clear_cartItemsBtn = document.getElementById('clear_cartItems');
+    if (clear_cartItemsBtn) {
+        clear_cartItemsBtn.addEventListener('click', () => {
+            cart = []; // Clear the cart array
+            updateCart();
+            alert('Cart cleared');
+        });
+    }
+
+    // alert("Thank you for your order.")
+    if (checkout_cartItemsBtn) {
+        checkout_cartItemsBtn.addEventListener('click', () => {
+            sessionStorage.removeItem('CART');
+            alert('Thank you for your order.');
+            location.reload();
+        });
+    }
+    updateCart();
+    renderProducts();
 }
+
+
