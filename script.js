@@ -19,7 +19,7 @@ if (newsletterBtn) {
     let newsletter = JSON.parse(localStorage.getItem('newsletter')) || []; // Key name for table 
 
     const newNewsletter = {
-      email: email// Get the input value by ID
+      email: email
     };
 
     newsletter.push(newNewsletter);
@@ -53,7 +53,7 @@ if (contact_us_messageBtn) {
         };
         messages.push(newMessage);
 
-        localStorage.setItem('message', JSON.stringify(messaages))
+        localStorage.setItem('message', JSON.stringify(messages))
         alert('Thank you for your message.');
         location.reload();
     });
