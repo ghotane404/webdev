@@ -3,59 +3,57 @@ import { products } from "./products.js";
 // ---------------- NEWSLETTER SUBSCRIPTION ----------------
 // ---------------------------------------------------------
 // alert("Thank you for subscribing.")
-
 const newsletterBtn = document.getElementById('subscribe-button');
 if (newsletterBtn) {
-  newsletterBtn.addEventListener('click', (e) => {
-    e.preventDefault(); 
+    newsletterBtn.addEventListener('click', (e) => { // *mouse event 
+        e.preventDefault();
 
-    const email = document.getElementById('subscribe-email');
+        const emailInput = document.getElementById('subscribe-email');
+        const email = emailInput.value.trim();
+        if (!email) {
+            alert('Please enter an email address.');
+            return;
+        }
 
-    if (!email) {
-        alert('Please enter an email address.');
-        return;
-    }
+        let newsletter = JSON.parse(localStorage.getItem('Newsletter-Subscribers')) || []; //saving it as array 
+        const newNewsletter = {
+            email: email
+        };
 
-    let newsletter = JSON.parse(localStorage.getItem('newsletter')) || []; // Key name for table 
+        newsletter.push(newNewsletter);
+        localStorage.setItem('Newsletter-Subscribers', JSON.stringify(newsletter));
 
-    const newNewsletter = {
-      email: email
-    };
-
-    newsletter.push(newNewsletter);
-    localStorage.setItem('newsletter', JSON.stringify(newsletter));
-
-    alert('Thank you for subscribing.');
-    location.reload();
-  });
-} 
+        alert('Thank you for subscribing.');
+        emailInput.value = ''; // clears the previous input by user
+    });
+}
 
 // -------------------------------------------------
 // ---------------- CONTACT US PAGE ----------------
 // -------------------------------------------------
-
 // alert("Thank you for your message.")
-const contact_us_messageBtn = document.getElementById('contact_us_message');
+const contactUsMessageBtn = document.getElementById('contact-us-form');
 
-if (contact_us_messageBtn) {
-    contact_us_messageBtn.addEventListener('click', (e) => {
+if (contactUsMessageBtn) {
+    contactUsMessageBtn.addEventListener('submit', (e) => { //form submit, not just a click!!!
         e.preventDefault();
-        //save cart to local storage
 
-        let messages = JSON.parse(localStorage.getItem('message')) || [];
+        // Key name = Form-Submission to local storage empty array
+        let messages = JSON.parse(localStorage.getItem('Form-Submission')) || [];
 
         const newMessage = {
-            name: document.querySelector('input[type="text"]').value,
-            phone: document.querySelector('input[type="tel"]').value,
-            email: document.querySelector('input[type="email"]').value,
-            requestType: document.getElementById('requestType').value,
-            message: document.getElementById('message').value,
+            Name: document.querySelector('input[name="name"]').value,
+            Phone: document.querySelector('input[name="phone"]').value,
+            Email: document.querySelector('input[name="email"]').value,
+            RequestType: document.getElementById('requestType').value,
+            Message: document.getElementById('message').value,
         };
+        // save the newMessage collected to local storage
         messages.push(newMessage);
+        localStorage.setItem('Form-Submission', JSON.stringify(messages));
 
-        localStorage.setItem('message', JSON.stringify(messages))
         alert('Thank you for your message.');
-        location.reload();
+        contactUsMessageBtn.reset(); // clears the previous input by user
     });
 }
 
@@ -148,7 +146,6 @@ if (productsEl && cartItemsEl && subtotalEl) {
 
     // //Cart Array
     // let cart = [];
-
     let cart = JSON.parse(sessionStorage.getItem("CART")) || [];
     updateCart();
 
@@ -158,7 +155,6 @@ if (productsEl && cartItemsEl && subtotalEl) {
         if (cart.some((item) => item.id === id)) {
             alert("Added to Cart.")
             changeQuantity("plus", id)
-
         }
         else {
             const item = products.find((product) => product.id === id);
