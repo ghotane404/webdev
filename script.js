@@ -35,7 +35,7 @@ if (contactUsMessageBtn) {
         e.preventDefault();
 
         // Key name = Form-Submission to local storage empty array
-        let messages = JSON.parse(localStorage.getItem('Form-Submission')) || [];
+        let messages = JSON.parse(localStorage.getItem('formSubmission')) || [];
 
         const newMessage = {
             Name: document.querySelector('input[name="name"]').value,
@@ -46,7 +46,7 @@ if (contactUsMessageBtn) {
         };
         // save the newMessage collected to local storage
         messages.push(newMessage);
-        localStorage.setItem('Form-Submission', JSON.stringify(messages));
+        localStorage.setItem('formSubmission', JSON.stringify(messages));
 
         alert('Thank you for your message.');
         contactUsMessageBtn.reset(); // clears the previous input by user
@@ -141,7 +141,6 @@ if (productsEl && cartItemsEl && subtotalEl) {
         });
     }
 
-
     // Get cart from sessionStorage, or start with empty array
     let cart = [];
     const savedCart = sessionStorage.getItem("CART");
@@ -150,7 +149,6 @@ if (productsEl && cartItemsEl && subtotalEl) {
     }
 
     // ADD TO CART FUNCTION
-    // window.addToCart = addToCart;
     function addToCart(id) {
         if (cart.some((item) => item.id === id)) {
             alert("Added to Cart.")
@@ -245,8 +243,8 @@ if (productsEl && cartItemsEl && subtotalEl) {
 
     // update quantity in Cart 
     function changeQuantity(action, id) {
-        console.log('Looking for item with id:', id);
-        console.log('Current cart:', cart);
+        // console.log('Looking for item with id:', id);
+        // console.log('Current cart:', cart);
 
         const item = cart.find((e) => e.id == id);
         let quantity = item.quantity;
@@ -266,20 +264,27 @@ if (productsEl && cartItemsEl && subtotalEl) {
         clear_cartItemsBtn.addEventListener('click', () => {
             cart = []; // Clear the cart array
             updateCart();
-            alert('Cart cleared');
+            alert('Cart cleared.');
         });
     }
 
     // alert("Thank you for your order.")
+    const checkout_cartItemsBtn = document.getElementById('checkout_cartItems');
     if (checkout_cartItemsBtn) {
         checkout_cartItemsBtn.addEventListener('click', () => {
+            const savedCart = sessionStorage.getItem('CART');
+            const cart = savedCart ? JSON.parse(savedCart) : [];
+            if (cart.length === 0) {
+                alert('No item(s) in cart to check out. Please add items and try again.');
+                return;
+            }
             sessionStorage.removeItem('CART');
             alert('Thank you for your order.');
             location.reload();
         });
     }
+
     updateCart();
     renderProducts();
 }
-
 
