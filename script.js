@@ -3,28 +3,24 @@ import { products } from "./products.js";
 // ---------------- NEWSLETTER SUBSCRIPTION ----------------
 // ---------------------------------------------------------
 // alert("Thank you for subscribing.")
-const newsletterBtn = document.getElementById('subscribe-button');
+const newsletterBtn = document.getElementById('newsletter-form');
 if (newsletterBtn) {
-    newsletterBtn.addEventListener('click', (e) => { // *mouse event 
+    newsletterBtn.addEventListener('submit', (e) => { // *mouse event 
         e.preventDefault();
 
         const emailInput = document.getElementById('subscribe-email');
         const email = emailInput.value.trim();
-        if (!email) {
-            alert('Please enter an email address.');
-            return;
-        }
 
-        let newsletter = JSON.parse(localStorage.getItem('Newsletter-Subscribers')) || []; //saving it as array 
+        let newsletter = JSON.parse(localStorage.getItem('newsletterSubscribers')) || []; //saving it as array 
         const newNewsletter = {
             email: email
         };
 
         newsletter.push(newNewsletter);
-        localStorage.setItem('Newsletter-Subscribers', JSON.stringify(newsletter));
+        localStorage.setItem('newsletterSubscribers', JSON.stringify(newsletter));
 
         alert('Thank you for subscribing.');
-        emailInput.value = ''; // clears the previous input by user
+        newsletterBtn.reset(); // clears the previous input by user
     });
 }
 

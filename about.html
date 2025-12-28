@@ -13,7 +13,8 @@
     <header>
         <div id="header-upper">
             <a href="index.html">
-                <img class="header-logo" id="header-logo" src="icon/Client3_LogoPalette1-yellow.png" alt="Book Haven Bookstore Logo" >
+                <img class="header-logo" id="header-logo" src="icon/Client3_LogoPalette1-yellow.png"
+                    alt="Book Haven Bookstore Logo">
             </a>
             <h1 id="client-name">Book<br>Haven<br>Bookstore</h1>
         </div>
@@ -101,7 +102,7 @@
                     </textarea>
                 </label>
                 <br>
-                <input type="submit" value="Submit" id="contact_us_message">
+                <input id="contact_us_message" type="submit" value="Submit">
             </form>
         </section>
     </main>
@@ -110,10 +111,16 @@
         <div class="footer-container">
             <div class="newsletter-section">
                 <h3>Signup for our Newsletter!</h3>
+                <!-- <input type="email" placeholder="Your Email" id="subscribe-email" required>
+                    <button id="subscribe-button">Subscribe</button> -->
+
                 <div class="newsletter-container">
-                    <input type="email" placeholder="Your Email" id="subscribe-email" required>
-                    <button id="subscribe-button">Subscribe</button>
+                    <form action="" method="post" id="newsletter-form">
+                        <input type="email" placeholder="Your Email" id="subscribe-email" required />
+                        <input id="subscribe-button" type="submit" value="Subscribe" />
+                    </form>
                 </div>
+
             </div>
 
             <div class="social-media-section">
