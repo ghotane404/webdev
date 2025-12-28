@@ -530,6 +530,10 @@ textarea {
   width: 100%;
 }
 
+#message.form-control {
+  text-align: left;
+}
+
 #contact_us_message,
 button {
   border: none;
